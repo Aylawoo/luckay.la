@@ -38,10 +38,12 @@ html, body {
 }
 
 .page {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
 
     border-radius: 1em;
+
+    max-width: 65%;
 }
 
 .nav-bar {
@@ -61,7 +63,7 @@ html, body {
     width: 100%;
 }
 
-.nav-bar > ul > li {
+.nav-bar > ul > a > li {
     display: inline-flex;
 
     justify-content: center;
@@ -77,10 +79,19 @@ html, body {
     border-radius: 1em;
 
     background-color: var(--base);
+    color: var(--text);
+    border: 2px var(--subtext-0) solid;
 }
 
-.nav-bar .nav-active {
-    background-color: var(--surface-0);
+.nav-bar > ul > a > li:hover {
+    background-color: var(--surface-1);
+
+    transition: background-color 1s linear;
+}
+
+.nav-bar > ul > a.nav-active > li {
+    background-color: var(--surface-1);
+    border: 2px var(--mauve) solid;
 }
 
 .post {

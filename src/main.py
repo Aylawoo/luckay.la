@@ -1,12 +1,12 @@
 from sanic import Sanic, request
-from sanic.response import text
 
-app = Sanic("wolfie-space")
+app = Sanic("luck-ayla")
 app.extend(config={
-        "templating_path_to_templates": "html/"
-    }
+    "templating_path_to_templates": "html/"
+}
 )
 app.static("static/", "static/")
+
 
 @app.get("/")
 @app.ext.template("home.html")
