@@ -1,6 +1,8 @@
 from os import getenv
 from dotenv import load_dotenv
-from sanic import Sanic, request
+from sanic import Sanic
+
+from blueprints.primary import home
 
 load_dotenv()
 
@@ -9,11 +11,8 @@ app.config.FORWARDED_SECRET = getenv("SANIC_ID")
 app.extend(config={"templating_path_to_templates": "html/"})
 app.static("static/", "static/")
 
-
-@app.get("/")
-@app.ext.template("home.html")
-async def home(req: request) -> dict:
-    return {}
+for bp in [home]:
+    app.blueprint(bp)
 
 
 if __name__ == "__main__":
