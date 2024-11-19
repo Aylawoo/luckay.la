@@ -1,5 +1,5 @@
 :root {
-    --text: #cdd6f4;
+    --text: #e6eaf9;
     --subtext-0: #a6adc8;
     --overlay-2: #9399b2;
     --overlay-0: #6c7086;
@@ -81,12 +81,14 @@ html, body {
     background-color: var(--base);
     color: var(--text);
     border: 2px var(--subtext-0) solid;
+
+    transition: background-color 250ms linear;
 }
 
 .nav-bar > ul > a > li:hover {
     background-color: var(--surface-1);
 
-    transition: background-color 1s linear;
+    transition: background-color 250ms linear;
 }
 
 .nav-bar > ul > a.nav-active > li {
@@ -103,6 +105,7 @@ html, body {
 
     border-radius: 1em;
     background-color: var(--base);
+    border: 2px solid var(--mauve);
 }
 
 .post > h1 {
