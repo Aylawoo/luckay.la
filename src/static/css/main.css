@@ -129,3 +129,23 @@ html, body {
     margin-inline: 1em;
     margin-bottom: 1em;
 }
+
+@media (max-width: 1024px) {
+    .page {
+        max-width: 95%;
+    }
+
+    .nav-bar > ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5em;
+        justify-content: center;
+    }
+
+    .nav-bar > ul > a > li {
+        width: 85%;
+        max-width: none;
+        text-align: center;
+        margin: 0;
+    }
+}
